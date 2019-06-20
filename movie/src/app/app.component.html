@@ -1,0 +1,34 @@
+
+<form class="col-md-8 offset-md-2 submit" [formGroup]="movieform" (ngSubmit)="onSearch()" autocomplete="off">
+  <label>Movie Name</label>
+  <input type="text" class="form-control" formControlName='movieName'>
+      <div class="validation-error" *ngIf="!movieform.controls['movieName'].valid  &&  movieform.controls['movieName'].touched">
+          This field is required.</div>
+  
+
+      <div class="col-md-6">
+          <label id="amtclaimedLabel">Release Year</label>
+          <input class="form-control" type="text" min="1" maxlength="10" pattern="[0-9]*" formControlName="releaseYear">
+        </div>
+          <button class="btn btn-primary" [disabled]="!movieform.valid">Search</button>         
+</form>
+<div *ngIf="card">
+    <label>Movie</label>
+    <p>{{details.Title}}</p>
+    <hr>
+    <label>Cast</label>
+    <p>{{details.Actors}}</p>
+    <hr>
+    <label>Director</label>
+    <p>{{details.Director}}</p>
+    <hr>
+    <label>Genre</label>
+    <p>{{details.Genre}}</p>
+    <hr>
+    <label>Release Date</label>
+    <p>{{details.Released}}</p>
+    <hr>
+    <label>POSTER</label>
+    <p>{{details.Plot}}</p>
+    <img [src]= details.Poster>
+  </div>
