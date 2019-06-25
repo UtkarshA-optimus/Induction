@@ -1,0 +1,42 @@
+<h4>Upcoming Movies</h4>
+<ul
+  class="list-group list-group-horizontal c-ulist"
+  *ngFor="let movie of movies | slice: 0:10; let i = index"
+>
+  <div class="row c-row">
+    <li class="list-group-item c-list" (click)="onSelectMovie(movie)">
+      <div class="col-sm-8">
+        <div class="row c-row-title" title="{{ movie.original_title }}">
+          {{ movie.original_title }}
+        </div>
+        <div class="row"><u>Release Date:</u></div>
+        <div class="row">
+          {{ movie.release_date | date: "mediumDate" }}
+        </div>
+        <div class="row">
+          <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&#9733;</span>&#9733;
+            </span>
+          </ng-template>
+
+          <ngb-rating
+            [(rate)]="movie.vote_average"
+            [starTemplate]="t"
+            [readonly]="true"
+            max="10"
+          ></ngb-rating>
+
+          <hr />
+          <pre>Rate: <b>{{movie.vote_average}}/10</b></pre>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <img
+          class="c-list-img"
+          src="https://image.tmdb.org/t/p/w500/{{ movie.poster_path }}"
+        />
+      </div>
+    </li>
+  </div>
+</ul>

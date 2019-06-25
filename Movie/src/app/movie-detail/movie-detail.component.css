@@ -1,0 +1,17 @@
+.c-detail-img {
+    width: 330px;
+    height: 100%;
+}
+
+.content {
+    padding-right: 2%;
+    border-right: 2px solid yellow;
+}
+
+label {
+    color: wheat;
+}
+
+.row {
+    padding-top: 5%;
+}
