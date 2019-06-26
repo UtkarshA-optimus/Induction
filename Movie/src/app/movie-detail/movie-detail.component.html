@@ -1,0 +1,20 @@
+<div class="row" *ngIf="search">
+  <div class="col-sm-8 c-movieDetail-content">
+    <h3>{{ searchResult.Title }}</h3>
+    <label>Release Date</label>
+    <p>{{ searchResult.Released }}</p>
+    <label>Actors</label>
+    <p>{{ searchResult.Actors }}</p>
+    <label>Director</label>
+    <p>{{ searchResult.Director }}</p>
+    <label>Genre</label>
+    <p>{{ searchResult.Genre }}</p>
+    <label>IMDB Ratings</label>
+    <p>{{ searchResult.imdbRating }}</p>
+    <label>Plot</label>
+    <p>{{ searchResult.Plot }}</p>
+  </div>
+  <div class="col-sm-4">
+    <img src="{{ searchResult.Poster }}" class="c-movieDetail-img" />
+  </div>
+</div>

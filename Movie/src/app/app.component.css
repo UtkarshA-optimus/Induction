@@ -1,0 +1,25 @@
+.progress {
+    height: 3px!important;
+}
+
+.c-movieFinder-col {
+    margin-left: 2%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 600px;
+}
+
+.movieFinder-nav-title {
+    font-size: 20px;
+    font-weight: bolder;
+    color: black!important;
+}
+
+.c-search-button {
+    margin-left: 5px;
+}
+
+.c-movieFinder-row {
+    height: calc(100% - 60px);
+    overflow: auto;
+}

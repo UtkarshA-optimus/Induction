@@ -1,0 +1,18 @@
+.c-movieDetail-img {
+    width: 330px;
+    height: 100%;
+}
+
+.c-movieDetail-content {
+    padding-right: 2%;
+    border-right: 2px solid yellow;
+}
+
+label {
+    color: wheat;
+}
+
+.row {
+    padding-top: 8%;
+    margin-left: 2%;
+}

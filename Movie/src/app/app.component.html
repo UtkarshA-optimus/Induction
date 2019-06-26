@@ -1,0 +1,43 @@
+<nav class="navbar navbar-expand-sm navbar-warning bg-warning">
+  <a class="navbar-brand movieFinder-nav-title">Movie Finder</a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent"></div>
+  <form
+    class="form-inline my-2 my-sm-0"
+    [formGroup]="movieform"
+    (ngSubmit)="onSearch()"
+    autocomplete="off"
+    aria-required="true"
+  >
+    <input
+      class="form-control mr-sm-2"
+      formControlName="movieName"
+      placeholder="Movie"
+      aria-label="Search"
+    />
+    <input
+      class="form-control"
+      type="text"
+      placeholder="Release Year"
+      min="1"
+      maxlength="4"
+      pattern="[0-9]*"
+      formControlName="releaseYear"
+    />
+    <button
+      class="btn btn-success c-search-button"
+      type="submit"
+      [disabled]="!movieform.valid"
+    >
+      Search
+    </button>
+  </form>
+</nav>
+<ng-progress [spinner]="false" [thick]="true"></ng-progress>
+<div class="container-fluid">
+  <div class="row c-movieFinder-row">
+    <div class="col-sm-3 c-movieFinder-col">
+      <movie-list></movie-list>
+    </div>
+    <div class="col-sm-8"><movie-detail></movie-detail></div>
+  </div>
+</div>
